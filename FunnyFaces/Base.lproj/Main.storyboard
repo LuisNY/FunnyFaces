@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RVz-xv-GX6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Module4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhk-uD-OqS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                                <connections>
+                                    <segue destination="cUi-Zr-j3j" kind="embed" identifier="faceTracker" id="n2H-hM-4FG"/>
+                                </connections>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-Mc-35o">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbd-qj-HV7" userLabel="Hat">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="40"/>
+                                        <state key="normal" image="hatSmall"/>
+                                        <connections>
+                                            <action selector="hatOptionsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lKx-xt-gdV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1I-R4-KqB" userLabel="Eyes">
+                                        <rect key="frame" x="75" y="0.0" width="75" height="40"/>
+                                        <state key="normal" image="eyeSmall"/>
+                                        <connections>
+                                            <action selector="eyesOptionsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S65-WQ-0vb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc7-rz-JhY">
+                                        <rect key="frame" x="150" y="0.0" width="75" height="40"/>
+                                        <state key="normal" image="cameraSmall"/>
+                                        <connections>
+                                            <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1XN-kr-oZh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Z9-OJ-zCC" userLabel="Nose">
+                                        <rect key="frame" x="225" y="0.0" width="75" height="40"/>
+                                        <state key="normal" image="noseSmall"/>
+                                        <connections>
+                                            <action selector="noseOptionsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCa-eh-gDU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KfG-W4-WoJ" userLabel="Lips">
+                                        <rect key="frame" x="300" y="0.0" width="75" height="40"/>
+                                        <state key="normal" image="lipsSmall"/>
+                                        <connections>
+                                            <action selector="lipsOptionsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ylX-al-GMO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="IK8-NL-VGt"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pkg-Mc-35o" firstAttribute="top" secondItem="rhk-uD-OqS" secondAttribute="bottom" id="2bM-Ss-M7c"/>
+                            <constraint firstItem="rhk-uD-OqS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Ho-p2-3vS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pkg-Mc-35o" secondAttribute="bottom" id="D9u-tz-9vW"/>
+                            <constraint firstAttribute="trailing" secondItem="pkg-Mc-35o" secondAttribute="trailing" id="NVX-Rg-l70"/>
+                            <constraint firstItem="rhk-uD-OqS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="RjY-dL-XjR"/>
+                            <constraint firstItem="pkg-Mc-35o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VOd-kS-g6d"/>
+                            <constraint firstAttribute="trailing" secondItem="rhk-uD-OqS" secondAttribute="trailing" id="fMv-Qi-a8E"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OUM-05-BIO"/>
+                    <connections>
+                        <outlet property="bigPicImageView" destination="Y30-ON-AWk" id="o4P-03-eZe"/>
+                        <outlet property="bigPicView" destination="CW8-Ws-7ke" id="ha1-20-C8f"/>
+                        <outlet property="blueEyesOutlet" destination="D6C-jY-tV4" id="lJr-Xi-puU"/>
+                        <outlet property="clownNoseOutlet" destination="mRU-Ft-FtS" id="Iss-z0-QYW"/>
+                        <outlet property="clownWigOutlet" destination="gpx-oA-fPt" id="I3c-T4-5Vt"/>
+                        <outlet property="cowboyHatOutlet" destination="gvx-H4-hkF" id="mLG-ii-wrC"/>
+                        <outlet property="dogNoseOutlet" destination="AbX-zt-1k4" id="6yY-rV-QuN"/>
+                        <outlet property="eyesOptionsView" destination="qo0-ba-5Dy" id="6C8-jC-Bo3"/>
+                        <outlet property="faceTrackerContainerView" destination="rhk-uD-OqS" id="PHU-ub-urV"/>
+                        <outlet property="filterOptionsView" destination="pkg-Mc-35o" id="LSC-Vy-clN"/>
+                        <outlet property="greenEyesOutlet" destination="OGf-VX-zCy" id="Ghd-Q0-cDU"/>
+                        <outlet property="hatOptionsView" destination="OZ9-iQ-OIZ" id="q9c-rW-LX9"/>
+                        <outlet property="laughingLipsOutlet" destination="pqY-kp-bUF" id="g1n-pc-zak"/>
+                        <outlet property="lipsOptionsView" destination="05X-lf-FHe" id="aJq-EG-THn"/>
+                        <outlet property="noneEyesOutlet" destination="Klb-OJ-amB" id="qrr-KR-Nio"/>
+                        <outlet property="noneHatOutlet" destination="3b1-7P-yR3" id="f5a-vp-5Bh"/>
+                        <outlet property="noneLipsOutlet" destination="Vtl-m2-EPV" id="xVu-HM-l8u"/>
+                        <outlet property="noneNoseOutlet" destination="ncb-e0-xyb" id="Ruz-RN-5k1"/>
+                        <outlet property="noseOptionsView" destination="dFl-WY-2Bk" id="aD6-2c-yHw"/>
+                        <outlet property="pigNoseOutlet" destination="RdS-Sg-0As" id="2lh-Le-ffG"/>
+                        <outlet property="redLipsOutlet" destination="OKG-mP-YZf" id="bef-y5-EFS"/>
+                        <outlet property="santaHatOutlet" destination="kqc-vl-Nm4" id="sln-Ch-iee"/>
+                        <outlet property="sunglassesOutlet" destination="vr4-HE-Agi" id="7kN-My-YXD"/>
+                        <outlet property="tongueOutOutlet" destination="Xq5-Fu-Pw1" id="FGm-do-TLr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="OZ9-iQ-OIZ" userLabel="hatOptionsView">
+                    <rect key="frame" x="0.0" y="0.0" width="379" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xhU-gN-0yR">
+                            <rect key="frame" x="0.0" y="0.0" width="379" height="128"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvx-H4-hkF">
+                                    <rect key="frame" x="0.0" y="0.0" width="379" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Cowboy hat">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cowboyHatAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IkD-hj-4at"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpx-oA-fPt">
+                                    <rect key="frame" x="0.0" y="32" width="379" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Clown wig">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clownWigAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5nk-yZ-qRz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqc-vl-Nm4">
+                                    <rect key="frame" x="0.0" y="64" width="379" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Santa hat">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="santaHatAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CGM-41-SgH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3b1-7P-yR3">
+                                    <rect key="frame" x="0.0" y="96" width="379" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="None">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="noneHatAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWJ-ry-MC4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="xhU-gN-0yR" firstAttribute="top" secondItem="OZ9-iQ-OIZ" secondAttribute="top" id="JLy-dZ-LkL"/>
+                        <constraint firstAttribute="trailing" secondItem="xhU-gN-0yR" secondAttribute="trailing" id="gXg-Sx-79w"/>
+                        <constraint firstAttribute="bottom" secondItem="xhU-gN-0yR" secondAttribute="bottom" id="kYY-nM-OUG"/>
+                        <constraint firstItem="xhU-gN-0yR" firstAttribute="leading" secondItem="OZ9-iQ-OIZ" secondAttribute="leading" id="xxJ-UQ-grV"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="qo0-ba-5Dy" userLabel="eyesOptionsView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="06J-jk-SEl">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D6C-jY-tV4">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Blue eyes">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="blueEyesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vez-Qb-WK6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGf-VX-zCy">
+                                    <rect key="frame" x="0.0" y="32" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Green eyes">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="greenEyesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qPD-6n-vkm"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr4-HE-Agi">
+                                    <rect key="frame" x="0.0" y="64" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Sunglasses">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sunglassesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="flZ-JV-7tJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klb-OJ-amB">
+                                    <rect key="frame" x="0.0" y="96" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="None">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nonEyesAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cM6-HQ-KCD"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="06J-jk-SEl" secondAttribute="bottom" id="1Mc-MW-Zj8"/>
+                        <constraint firstAttribute="trailing" secondItem="06J-jk-SEl" secondAttribute="trailing" id="4Mh-j4-uLO"/>
+                        <constraint firstItem="06J-jk-SEl" firstAttribute="leading" secondItem="qo0-ba-5Dy" secondAttribute="leading" id="qY5-uQ-dpc"/>
+                        <constraint firstItem="06J-jk-SEl" firstAttribute="top" secondItem="qo0-ba-5Dy" secondAttribute="top" id="seO-V0-ml3"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="dFl-WY-2Bk" userLabel="noseOptionsView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="P9E-5Y-I8C">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRU-Ft-FtS">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Clown nose">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clownNoseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9g-Lv-aAp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdS-Sg-0As">
+                                    <rect key="frame" x="0.0" y="32" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Pig nose">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="pigNoseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hcq-vu-Ewu"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-zt-1k4">
+                                    <rect key="frame" x="0.0" y="64" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Dog nose">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="dogNoseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EFe-it-FGb"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncb-e0-xyb">
+                                    <rect key="frame" x="0.0" y="96" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="None">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="noneNoseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n40-RO-sqE"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="P9E-5Y-I8C" firstAttribute="top" secondItem="dFl-WY-2Bk" secondAttribute="top" id="6PP-wZ-VEl"/>
+                        <constraint firstAttribute="trailing" secondItem="P9E-5Y-I8C" secondAttribute="trailing" id="Nxk-dF-tc0"/>
+                        <constraint firstAttribute="bottom" secondItem="P9E-5Y-I8C" secondAttribute="bottom" id="n4A-dG-m7f"/>
+                        <constraint firstItem="P9E-5Y-I8C" firstAttribute="leading" secondItem="dFl-WY-2Bk" secondAttribute="leading" id="uLk-6z-sZj"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="05X-lf-FHe" userLabel="lipsOptionsView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cgF-3z-z0v">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKG-mP-YZf">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Red lips">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="redLipsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSW-hv-HYZ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqY-kp-bUF">
+                                    <rect key="frame" x="0.0" y="32" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Laughing lips">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="laughingLipsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FMI-dI-s5H"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xq5-Fu-Pw1">
+                                    <rect key="frame" x="0.0" y="64" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="Tongue out">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tongueOutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cp9-7X-OF7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtl-m2-EPV">
+                                    <rect key="frame" x="0.0" y="96" width="240" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <state key="normal" title="None">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="noneLipsAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u9X-3c-FVV"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="cgF-3z-z0v" firstAttribute="top" secondItem="05X-lf-FHe" secondAttribute="top" id="465-aP-KZQ"/>
+                        <constraint firstItem="cgF-3z-z0v" firstAttribute="leading" secondItem="05X-lf-FHe" secondAttribute="leading" id="Igh-TQ-bsJ"/>
+                        <constraint firstAttribute="bottom" secondItem="cgF-3z-z0v" secondAttribute="bottom" id="npD-ef-RTU"/>
+                        <constraint firstAttribute="trailing" secondItem="cgF-3z-z0v" secondAttribute="trailing" id="rbt-6W-hda"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" id="CW8-Ws-7ke" userLabel="bigPicView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y30-ON-AWk">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="88"/>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ZgE-if-771">
+                            <rect key="frame" x="0.0" y="88" width="240" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9p7-1m-8hx">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <state key="normal" image="save">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="saveBigPicView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dTW-Jo-8BR"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gor-yL-aMH">
+                                    <rect key="frame" x="120" y="0.0" width="120" height="40"/>
+                                    <state key="normal" image="cancel">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelBigPicView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jm3-Kc-2DX"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="kD0-dm-DCP"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ZgE-if-771" firstAttribute="leading" secondItem="CW8-Ws-7ke" secondAttribute="leading" id="27s-9l-V3n"/>
+                        <constraint firstAttribute="bottom" secondItem="ZgE-if-771" secondAttribute="bottom" id="JSf-cy-RDB"/>
+                        <constraint firstAttribute="trailing" secondItem="ZgE-if-771" secondAttribute="trailing" id="KKr-Wa-vfY"/>
+                        <constraint firstItem="Y30-ON-AWk" firstAttribute="leading" secondItem="CW8-Ws-7ke" secondAttribute="leading" id="KaY-Gx-hD7"/>
+                        <constraint firstItem="ZgE-if-771" firstAttribute="top" secondItem="Y30-ON-AWk" secondAttribute="bottom" id="stz-ia-vT8"/>
+                        <constraint firstItem="Y30-ON-AWk" firstAttribute="top" secondItem="CW8-Ws-7ke" secondAttribute="top" id="wOh-KD-gSQ"/>
+                        <constraint firstAttribute="trailing" secondItem="Y30-ON-AWk" secondAttribute="trailing" id="wd5-rg-1MM"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Face Tracker View Controller-->
+        <scene sceneID="SYi-u4-6nB">
+            <objects>
+                <viewController id="cUi-Zr-j3j" customClass="FaceTrackerViewController" customModule="FaceTracker" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CAz-aZ-V5T"/>
+                        <viewControllerLayoutGuide type="bottom" id="zwF-mR-w4c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RNL-Mr-raf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84y-DS-GKv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="844"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zk2-gv-TMD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RVz-xv-GX6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FrY-GA-7vM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tVU-MD-LhC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CB8-bW-YHN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-609" y="124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cameraSmall" width="29" height="29"/>
+        <image name="cancel" width="40" height="40"/>
+        <image name="eyeSmall" width="29" height="29"/>
+        <image name="hatSmall" width="29" height="29"/>
+        <image name="lipsSmall" width="29" height="29"/>
+        <image name="noseSmall" width="29" height="29"/>
+        <image name="save" width="30" height="30"/>
+    </resources>
+</document>
